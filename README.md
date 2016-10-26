@@ -10,8 +10,5 @@ the user two options on the start: FACTS and GAME.
 
 In the FACTS part, the user will learn some interesting facts about animals including a photo and a
 description. In the GAME, there are the card motives for the memory game: letters, animals,
-and cartoons. Each of the sections will have 4x4 and 6x4 grid size. After selection of the grid,
-the user will be asked if they want to play with or without a timer. In the timer mode, the user is able to
-win more points depending on time elapsed. After answering, the user is forwarded to the game. When having a streak of 2 and
-more, the game will show encouraging messages like: Keep going! Great! You rock! Etc. At the end of
+and cartoons. Each of the sections will have 4x4 and 6x4 grid size. After selection of the grid, the user is forwarded to the game. When having a streak of 2 and more, the game will show encouraging messages like: Keep going! Great! You rock! Etc. At the end of
 the game, the user will be able to type in their name and see the highest 5 scores.
