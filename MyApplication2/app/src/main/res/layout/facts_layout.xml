@@ -6,7 +6,7 @@
     android:weightSum="1">
 
     <TextView
-        android:text="Lorem ipsum dolor sit amet, sit no omnes legere interesset, odio idque ad per, an has everti posidonium. At autem consetetur assueverit sed, an mei facer libris referrentur. Per at wisi dolores. Te errem saepe his, commodo expetenda vel in, eu malis tacimates quo."
+        android:text="A newborn Chinese water deer is so small it can almost be held in the palm of the hand."
         android:layout_width="wrap_content"
         android:layout_height="186dp"
         android:id="@+id/textView"/>
@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@drawable/chinees_water_deer"
         android:id="@+id/imageView"
         android:layout_weight="0.43" />
 </LinearLayout>
