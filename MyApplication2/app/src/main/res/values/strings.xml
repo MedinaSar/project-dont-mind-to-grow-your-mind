@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="desName"></string>
+    <string name="day1">Gorillas can catch human colds and other illnesses.</string>
+    <string name="day2">A newborn Chinese water deer is so small it can almost be held in the palm of the hand.</string>
+    <string name="day3">Ostriches can run faster than horses, and the males can roar like lions.</string>
+    <string name="day4">A lion in the wild usually makes no more than twenty kills a year.</string>
+    <string name="day5">The female lion does ninety percent of the hunting.</string>
+    <string name="day6">The only dog that doesn’t have a pink tongue is the chow.</string>
+    <string name="day7">Turtles, water snakes, crocodiles, alligators, dolphins, whales, and other water going creatures will drown if kept underwater too long.</string>
 </resources>

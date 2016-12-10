@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Game_activity extends AppCompatActivity {
@@ -36,7 +37,14 @@ public class Game_activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 click++;
-                click=click%2;
+                if(click%3 == 0)
+                {
+                    imgv2.setImageResource(android.R.color.holo_blue_dark);
+                    imgv3.setImageResource(android.R.color.holo_blue_dark);
+                    imgv4.setImageResource(android.R.color.holo_blue_dark);
+                    click = 1;
+                    flag[0] = 0;
+                }
                 flag[0]++;
                 if (flag[0]==2)
                     Toast.makeText(Game_activity.this,printMessage(),Toast.LENGTH_SHORT).show();
@@ -49,12 +57,19 @@ public class Game_activity extends AppCompatActivity {
         imgv2.setOnClickListener((new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                click++;
+                if(click%3 == 0)
+                {
+                    imgv.setImageResource(android.R.color.holo_blue_dark);
+                    imgv3.setImageResource(android.R.color.holo_blue_dark);
+                    imgv4.setImageResource(android.R.color.holo_blue_dark);
+                    click = 1; flag[0] = 0;
+                }
                 flag[0]++;
                 if (flag[0]==2)
                     Toast.makeText(Game_activity.this,printMessage(),Toast.LENGTH_SHORT).show();
                 imgv2.setImageResource(R.mipmap.penguin);
                 flag[1]=0;
-                click++;
             }
         }));
 
@@ -62,6 +77,13 @@ public class Game_activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 click++;
+                if(click%3 == 0)
+                {
+                    imgv.setImageResource(android.R.color.holo_blue_dark);
+                    imgv2.setImageResource(android.R.color.holo_blue_dark);
+                    imgv4.setImageResource(android.R.color.holo_blue_dark);
+                    click = 1;
+                }
                 flag[1]++;
                 flag[0]=0;
                 imgv3.setImageResource(R.mipmap.elephant);
@@ -71,12 +93,18 @@ public class Game_activity extends AppCompatActivity {
         imgv4.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                click++;
+                if(click%3 == 0)
+                {
+                    imgv.setImageResource(android.R.color.holo_blue_dark);
+                    imgv2.setImageResource(android.R.color.holo_blue_dark);
+                    imgv3.setImageResource(android.R.color.holo_blue_dark);
+                    click = 1;
+                }
                 flag[1]++;
                 flag[0]=0;
                 imgv4.setImageResource(R.mipmap.cat);
-                click++;
             }
         }));
-
     }
 }
