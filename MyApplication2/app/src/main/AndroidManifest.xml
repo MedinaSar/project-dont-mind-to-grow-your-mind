@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".facts"
+        <activity
+            android:name=".facts"
             android:icon="@mipmap/cat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Memory" />
     </application>
 
 </manifest>
