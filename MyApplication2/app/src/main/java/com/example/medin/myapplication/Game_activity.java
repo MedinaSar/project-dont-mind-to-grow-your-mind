@@ -16,8 +16,10 @@ public class Game_activity extends AppCompatActivity{
 
         return "Yay, you did it!";
     }
+
     private  short[] flag = {0,0,0,0,0,0,0,0};
     private int click = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +53,7 @@ public class Game_activity extends AppCompatActivity{
                     imgv7.setImageResource(android.R.color.holo_blue_dark);
                     imgv8.setImageResource(android.R.color.holo_blue_dark);
                     imgv9.setImageResource(android.R.color.holo_blue_dark);
-                    click = 1;
-                    flag[0] = 0;
+                    click = 1; flag[0]=0;
                 }
                 flag[0]++;
                 if (flag[0]==2){
@@ -79,7 +80,7 @@ public class Game_activity extends AppCompatActivity{
                     imgv7.setImageResource(android.R.color.holo_blue_dark);
                     imgv8.setImageResource(android.R.color.holo_blue_dark);
                     imgv9.setImageResource(android.R.color.holo_blue_dark);
-                    click = 1; flag[0] = 0;
+                    click = 1; flag[1]=0;
                 }
 
                 imgv2.setImageResource(R.mipmap.hamster);
@@ -107,7 +108,7 @@ public class Game_activity extends AppCompatActivity{
                     imgv7.setImageResource(android.R.color.holo_blue_dark);
                     imgv8.setImageResource(android.R.color.holo_blue_dark);
                     imgv9.setImageResource(android.R.color.holo_blue_dark);
-                    click = 1;
+                    click = 1; flag[2]=0;
                 }
                 flag[2]++;
                 if (flag[2]==2){
@@ -134,7 +135,7 @@ public class Game_activity extends AppCompatActivity{
                     imgv7.setImageResource(android.R.color.holo_blue_dark);
                     imgv8.setImageResource(android.R.color.holo_blue_dark);
                     imgv9.setImageResource(android.R.color.holo_blue_dark);
-                    click = 1;
+                    click = 1; flag[3]=0;
                 }
                 flag[3]++;
                 if (flag[3]==2){
@@ -161,7 +162,7 @@ public class Game_activity extends AppCompatActivity{
                     imgv7.setImageResource(android.R.color.holo_blue_dark);
                     imgv8.setImageResource(android.R.color.holo_blue_dark);
                     imgv9.setImageResource(android.R.color.holo_blue_dark);
-                    click = 1;
+                    click = 1; flag[2]=0;
                 }
                 flag[2]++;
                 if (flag[2]==2){
@@ -188,14 +189,14 @@ public class Game_activity extends AppCompatActivity{
                     imgv4.setImageResource(android.R.color.holo_blue_dark);
                     imgv8.setImageResource(android.R.color.holo_blue_dark);
                     imgv9.setImageResource(android.R.color.holo_blue_dark);
-                    click = 1;
+                    click = 1; flag[3]=0;
                 }
                 flag[3]++;
                 if (flag[3]==2){
                     Toast.makeText(Game_activity.this,printMessage(),Toast.LENGTH_SHORT).show();
                     findViewById(R.id.imageView4).setVisibility(View.INVISIBLE);
                     findViewById(R.id.imageView7).setVisibility(View.INVISIBLE);
-                    flag[2]=0;
+                    flag[3]=0;
                 }
                 flag[0]=0; flag[1]=0; flag[2]=0;
                 imgv7.setImageResource(R.mipmap.cat);
@@ -215,7 +216,7 @@ public class Game_activity extends AppCompatActivity{
                     imgv7.setImageResource(android.R.color.holo_blue_dark);
                     imgv8.setImageResource(android.R.color.holo_blue_dark);
                     imgv9.setImageResource(android.R.color.holo_blue_dark);
-                    click = 1;
+                    click = 1; flag[0]=0;
                 }
                 flag[0]++;
                 if (flag[0]==2){
@@ -233,8 +234,7 @@ public class Game_activity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 click++;
-                if(click%3 == 0)
-                {
+                if(click%3 == 0) {
                     imgv.setImageResource(android.R.color.holo_blue_dark);
                     imgv2.setImageResource(android.R.color.holo_blue_dark);
                     imgv3.setImageResource(android.R.color.holo_blue_dark);
@@ -242,8 +242,7 @@ public class Game_activity extends AppCompatActivity{
                     imgv7.setImageResource(android.R.color.holo_blue_dark);
                     imgv8.setImageResource(android.R.color.holo_blue_dark);
                     imgv4.setImageResource(android.R.color.holo_blue_dark);
-                    click = 1;
-
+                    click = 1; flag[1] = 0;
                 }
                 flag[1]++;
                 if (flag[1]==2){

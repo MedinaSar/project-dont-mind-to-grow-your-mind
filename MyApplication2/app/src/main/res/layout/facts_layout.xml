@@ -5,16 +5,20 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="261dp"
+        app:srcCompat="@drawable/chinees_water_deer"
+        android:id="@+id/imageView"
+        android:layout_margin="10dp"/>
+
     <TextView
         android:text="A newborn Chinese water deer is so small it can almost be held in the palm of the hand."
         android:layout_width="wrap_content"
         android:layout_height="186dp"
-        android:id="@+id/textView"/>
+        android:id="@+id/textView"
+        android:textSize="23sp"
+        android:layout_margin="12dp"
+        android:textAlignment="textStart"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/chinees_water_deer"
-        android:id="@+id/imageView"
-        android:layout_weight="0.43" />
 </LinearLayout>
