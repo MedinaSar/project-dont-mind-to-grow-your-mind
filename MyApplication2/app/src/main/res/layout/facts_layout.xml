@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="261dp"
-        app:srcCompat="@drawable/chinees_water_deer"
+        app:srcCompat="@drawable/day2"
         android:id="@+id/imageView"
         android:layout_margin="10dp"/>
 

@@ -20,16 +20,33 @@ public class facts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.facts_layout);
 
-       /* final ImageView img = (ImageView) findViewById(R.id.imageView);
+        final ImageView img = (ImageView) findViewById(R.id.imageView);
         final TextView txt = (TextView) findViewById(R.id.textView);
 
-        //Mijenjam Views po datumu: promijeni value od slike i texta u xml svaki dan
-        //pa na osnovu toga izbaci sliku + text
-        int day = (Calendar.DAY_OF_MONTH)%7;
-        String picName = "chow6";
-        String desName = "day"+day;
+        int day = (Calendar.DAY_OF_MONTH)%22;
 
-        img.setImageResource(R.drawable.aligators21);
-        txt.setText(desName);*/
+        switch(day+1)  {
+            case 1:  img.setImageResource(R.drawable.day1);
+                     txt.setText(R.string.day1);
+                     break;
+            case 2:  img.setImageResource(R.drawable.day2);
+                     txt.setText(R.string.day2);
+                     break;
+            case 3:  img.setImageResource(R.drawable.day3);
+                     txt.setText(R.string.day3);
+                     break;
+            case 4:  img.setImageResource(R.drawable.day4);
+                     txt.setText(R.string.day4);
+                     break;
+            case 5:  img.setImageResource(R.drawable.day5);
+                     txt.setText(R.string.day5);
+                     break;
+            case 6: img.setImageResource(R.drawable.day6);
+                    txt.setText(R.string.day6);
+                    break;
+            case 7: img.setImageResource(R.drawable.day7);
+                    txt.setText(R.string.day7);
+                    break;
+        }
     }
 }
