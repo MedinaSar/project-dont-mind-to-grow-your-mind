@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         game_button.setOnClickListener((new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent games_intent= new Intent(MainActivity.this, Game_activity.class);
+                Intent games_intent= new Intent(MainActivity.this, Memory.class);
                 startActivity(games_intent);
             }
         }));
