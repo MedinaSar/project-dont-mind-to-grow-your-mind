@@ -46,15 +46,15 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
 // references to my images
 public static Integer[] mThumbIds = {
-        R.mipmap.penguin, R.mipmap.hippopotamus,
-        R.mipmap.elephant, R.mipmap.dolphin,
-        R.mipmap.elephant,  R.mipmap.cat,
-        R.mipmap.penguin,  R.mipmap.hamster,
-        R.mipmap.dolphin, R.mipmap.butterfly,
-        R.mipmap.donkey,  R.mipmap.hippopotamus,
-        R.mipmap.ladybug,  R.mipmap.panda,
-        R.mipmap.butterfly,  R.mipmap.hamster,
-        R.mipmap.ladybug, R.mipmap.cat,
-        R.mipmap.donkey, R.mipmap.panda,
+        R.drawable.penguin, R.drawable.hippopotamus,
+        R.drawable.elephant, R.drawable.dolphin,
+        R.drawable.elephant,  R.drawable.cat,
+        R.drawable.penguin,  R.drawable.hamster,
+        R.drawable.dolphin, R.drawable.butterfly,
+        R.drawable.donkey,  R.drawable.hippopotamus,
+        R.drawable.ladybug,  R.drawable.panda,
+        R.drawable.butterfly,  R.drawable.hamster,
+        R.drawable.ladybug, R.drawable.cat,
+        R.drawable.donkey, R.drawable.panda,
         };
 }
