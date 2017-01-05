@@ -2,6 +2,7 @@ package com.example.medin.myapplication;
 
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -17,10 +18,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.animation.AlphaAnimation;
 
+import java.sql.Time;
+
 
 public class Memory extends AppCompatActivity {
     public int clicks = 0;
     public ImageView previous, current, temp;
+    public TextView tx = (TextView) findViewById(R.id.textView2);
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -39,7 +43,6 @@ public class Memory extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(getLayoutInflater().inflate(R.layout.custom_toast, null));*/
-
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
@@ -76,6 +79,8 @@ public class Memory extends AppCompatActivity {
                 temp=previous;
                 previous = current;
                 //dodaj restrictions i ostale karafeke za memory!
+
+                tx.setText("HI!");
             }
         });
     }
