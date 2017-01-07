@@ -23,13 +23,9 @@ public int getCount() {
         return mThumbIds.length;
         }
 
-public Object getItem(int position) {
-        return null;
-        }
+public Object getItem(int position) { return null; }
 
-public long getItemId(int position) {
-        return 0;
-        }
+public long getItemId(int position) { return 0; }
 
 // create a new ImageView for each item referenced by the Adapter
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -46,7 +42,6 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
     return imageView;
 }
-
     public static void shuffleArray(Integer[] ar)
     {
         // If running on Java 6 or older, use `new Random()` on RHS here

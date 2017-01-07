@@ -1,8 +1,13 @@
 package com.example.medin.myapplication;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.media.Image;
 import android.net.Uri;
 import android.os.SystemClock;
+import android.provider.ContactsContract;
+import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -17,71 +22,101 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.animation.AlphaAnimation;
-
+import android.view.LayoutInflater;
 import java.sql.Time;
-
+import android.os.Handler;
 
 public class Memory extends AppCompatActivity {
     public int clicks = 0;
     public ImageView previous, current, temp;
-    public TextView tx = (TextView) findViewById(R.id.textView2);
+    public static boolean gone = false;
+    public void showToast(final Toast toast,String msg, int dur, TextView text){
+        text.setText(msg);
+        toast.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, dur);
+    }
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
-        final AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
+        final AlphaAnimation anim = new AlphaAnimation(0.5f, 0.0f);
         anim.setDuration(1000);
-        anim.setRepeatCount(0);
+
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_container));
+        final TextView text = (TextView) layout.findViewById(R.id.text);
+        final Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0); toast.setDuration(Toast.LENGTH_SHORT); toast.setView(layout);
 
         final GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
         ImageAdapter.shuffleArray(ImageAdapter.mThumbIds);
 
-        /*final Toast toast = new Toast (getApplicationContext());
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(getLayoutInflater().inflate(R.layout.custom_toast, null));*/
+        final long startTime = System.nanoTime();
+
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 current = (ImageView) v;
-
                 current.setImageResource(ImageAdapter.mThumbIds[position]);
                 if (clicks == 0) {
                     previous = current;
                     clicks++;
-                   //toast.setText("clicked : " + clicks);
-                    //toast.show();
-                } else {
-                    if (previous.getDrawable().getConstantState().equals(current.getDrawable().getConstantState()) && clicks==2) {
-                        previous.startAnimation(anim);
-                        previous.setVisibility(View.INVISIBLE);
-                        current.startAnimation(anim);
-                        current.setVisibility(View.INVISIBLE);
 
-                        /*toast.setText("You did it!");
-                        toast.show();*/
-                    }
-                    else {
-                        //toast.setText("clicked : " + clicks);
-                        //toast.show();
-                    }
-                }
-                if(clicks==3)
-                {
+                } else if (clicks == 2 && previous.getDrawable().getConstantState().equals(current.getDrawable().getConstantState())) {
+                        previous.startAnimation(anim); current.startAnimation(anim);
+                        previous.setVisibility(View.INVISIBLE); current.setVisibility(View.INVISIBLE);
+                        showToast(toast,"You did it!", 600,text);
+                        for(int i = 0; i < gridview.getChildCount(); i++) {
+                            if(gridview.getChildAt(i).getVisibility()==View.INVISIBLE)
+                                gone = true;
+                            else
+                                gone = false;
+                        }
+
+                        if(gone) {
+                            long endTime = System.nanoTime();
+                            long score = (endTime - startTime) / 10000000;
+
+                            SharedPreferences sharedPreferences = getSharedPreferences("HighScores", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putLong("Score", score);
+                            editor.commit();
+
+                            Long score1 = sharedPreferences.getLong("Score", score);
+                            TextView txt = (TextView) findViewById(R.id.textView2);
+                            txt.setText("CONGRATULATIONS! You're score is: " + score1);
+                            showToast(toast, "CONGRATS!", 900, text);
+                        }
+                    }  else if (clicks == 3) {
                     clicks = 1;
                     temp.setImageResource(R.color.colorPrimary);
-                    previous.setImageResource(R.color.colorPrimary);
-                }
+                    previous.setImageResource(R.color.colorPrimary); }
+
                 clicks++;
                 temp=previous;
                 previous = current;
-                //dodaj restrictions i ostale karafeke za memory!
-
-                tx.setText("HI!");
             }
         });
     }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+    }
+
+
+
+    onStart(), onResume(),
+    onPause(), onStop() and onDestroy().
 }
