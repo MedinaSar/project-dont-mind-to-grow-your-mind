@@ -87,7 +87,11 @@ public class Memory extends AppCompatActivity {
                             editor.commit();
 
                             Long score1 = sharedPreferences.getLong("Score", score);
-                            showToast(toast, "CONGRATS! "+score1, 900, text);
+                            //showToast(toast, "CONGRATS! "+score1, 900, text);
+                            TextView t = (TextView) findViewById(R.id.textView2);
+                            t.setText("CONGRATS! You're score is: "+score1);
+                            t.setBackgroundColor(R.color.tileColor2);
+
                         }
                     }  else if (clicks == 3) {
                     clicks = 1;
