@@ -91,7 +91,7 @@ public class Memory extends AppCompatActivity {
                             TextView t = (TextView) findViewById(R.id.textView2);
                             t.setText("CONGRATS! You're score is: "+score1);
                             t.setBackgroundColor(R.color.tileColor2);
-
+                            t.setTextSize(50);
                         }
                     }  else if (clicks == 3) {
                     clicks = 1;
