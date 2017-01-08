@@ -13,27 +13,22 @@
     android:background="@mipmap/twokids">
 
     <Button
-        android:layout_width="450dp"
-        android:layout_height="100dp"
+        android:layout_width="450sp"
+        android:layout_height="100sp"
         android:id="@+id/buttonFact"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="80sp"
         android:backgroundTint="#ff6666"
-        android:text="ANIM - FACTS"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:autoText="false"
-        android:cursorVisible="true"
-        android:fadingEdge="horizontal"
-        android:focusable="false"
-        android:elevation="0dp" />
+        android:text="DID YOU KNOW...?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
 
     <Button
-        android:layout_width="450dp"
-        android:layout_height="100dp"
+        android:layout_width="450sp"
+        android:layout_height="100sp"
         android:id="@+id/buttonPlay"
         android:layout_below="@id/buttonFact"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="20sp"
         android:backgroundTint="#ff6666"
         android:text="PLAY MEMORY"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />

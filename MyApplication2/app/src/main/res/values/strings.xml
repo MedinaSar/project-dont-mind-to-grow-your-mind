@@ -25,4 +25,5 @@
     <string name="day22">The turkey is one of the most famous birds in North America.</string>
 
     <string name="title_activity_select_game">Select_game</string>
+    <string name="title_activity_game_option">GameOption</string>
 </resources>

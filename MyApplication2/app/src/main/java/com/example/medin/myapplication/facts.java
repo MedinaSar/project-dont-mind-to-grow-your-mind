@@ -84,8 +84,8 @@ public class facts extends AppCompatActivity {
                      txt.setText(R.string.day21);
                      break;
             case 22: img.setImageResource(R.drawable.day22);
-                     txt.setText(R.string.day22);
-                     break;
+                    txt.setText(R.string.day22);
+                break;
         }
     }
 }
