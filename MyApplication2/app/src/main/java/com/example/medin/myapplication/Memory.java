@@ -2,18 +2,10 @@ package com.example.medin.myapplication;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.media.Image;
-import android.net.Uri;
-import android.os.SystemClock;
-import android.provider.ContactsContract;
-import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.AdapterView;
@@ -23,14 +15,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.animation.AlphaAnimation;
 import android.view.LayoutInflater;
-import java.sql.Time;
 import android.os.Handler;
 
 public class Memory extends AppCompatActivity {
-    public int clicks = 0;
-    public ImageView previous, current, temp;
-    public static boolean gone = false;
-    public void showToast(final Toast toast,String msg, int dur, TextView text){
+    private int clicks = 0;
+    private ImageView previous;
+    private ImageView current;
+    private ImageView temp;
+    private static boolean gone = false;
+    private void showToast(final Toast toast, String msg, int dur, TextView text){
         text.setText(msg);
         toast.show();
         Handler handler = new Handler();
@@ -40,6 +33,7 @@ public class Memory extends AppCompatActivity {
                 toast.cancel();
             }
         }, dur);
+        return;
     }
 
     @Override
@@ -99,8 +93,8 @@ public class Memory extends AppCompatActivity {
                         }
                     }  else if (clicks == 3) {
                     clicks = 1;
-                    temp.setImageResource(R.color.colorPrimary);
-                    previous.setImageResource(R.color.colorPrimary); }
+                    temp.setImageResource(R.color.tileColor2);
+                    previous.setImageResource(R.color.tileColor2); }
 
                 clicks++;
                 temp=previous;
@@ -108,15 +102,4 @@ public class Memory extends AppCompatActivity {
             }
         });
     }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-
-    }
-
-
-
-    onStart(), onResume(),
-    onPause(), onStop() and onDestroy().
 }

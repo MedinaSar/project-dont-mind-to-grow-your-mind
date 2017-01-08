@@ -10,25 +10,32 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.medin.myapplication.MainActivity"
+    android:background="@mipmap/twokids">
 
-    android:background="@color/backgr">
+    <Button
+        android:layout_width="450dp"
+        android:layout_height="100dp"
+        android:id="@+id/buttonFact"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#ff6666"
+        android:text="ANIM - FACTS"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:autoText="false"
+        android:cursorVisible="true"
+        android:fadingEdge="horizontal"
+        android:focusable="false"
+        android:elevation="0dp" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
-    <ImageButton
-        android:layout_width="600px"
-        android:layout_height="600px"
-        app:srcCompat="@mipmap/bear"
-        android:id="@+id/imageButton"/>
+    <Button
+        android:layout_width="450dp"
+        android:layout_height="100dp"
+        android:id="@+id/buttonPlay"
+        android:layout_below="@id/buttonFact"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#ff6666"
+        android:text="PLAY MEMORY"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-        <ImageButton
-            android:layout_width="600px"
-            android:layout_height="600px"
-            app:srcCompat="@mipmap/memory"
-            android:id="@+id/imageButton2"
-            android:layout_below="@id/imageButton"
-            android:layout_marginTop="50px"/>
-    </RelativeLayout>
 </RelativeLayout>

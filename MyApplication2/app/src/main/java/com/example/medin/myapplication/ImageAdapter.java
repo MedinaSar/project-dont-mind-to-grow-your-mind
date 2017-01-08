@@ -1,19 +1,16 @@
 package com.example.medin.myapplication;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.Random;
 
-public class ImageAdapter extends BaseAdapter {
-private Context mContext;
+class ImageAdapter extends BaseAdapter {
+private final Context mContext;
 
 public ImageAdapter(Context c) {
         mContext = c;
@@ -38,7 +35,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
     } else {
         imageView = (ImageView) convertView;
     }
-    imageView.setImageResource(R.color.colorPrimary);
+    imageView.setImageResource(R.color.tileColor);
+    imageView.setBackgroundColor(R.color.tileColor2);
 
     return imageView;
 }
@@ -56,7 +54,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         }
     }
 // references to my images
-public static Integer[] mThumbIds = {
+public static final Integer[] mThumbIds = {
         R.drawable.penguin, R.drawable.hippopotamus,
         R.drawable.elephant, R.drawable.dolphin,
         R.drawable.elephant,  R.drawable.cat,
