@@ -53,7 +53,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
             ar[i] = a;
         }
     }
-// references to my images
+// references to images
 public static final Integer[] mThumbIds = {
         R.drawable.penguin, R.drawable.hippopotamus,
         R.drawable.elephant, R.drawable.dolphin,

@@ -2,22 +2,21 @@ package com.example.medin.myapplication;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
+import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.animation.AlphaAnimation;
-import android.view.LayoutInflater;
-import android.os.Handler;
 
-public class Memory extends AppCompatActivity {
+public class Cartoons extends AppCompatActivity {
     private int clicks = 0;
     private ImageView previous;
     private ImageView current;
@@ -35,9 +34,8 @@ public class Memory extends AppCompatActivity {
         }, dur);
         return;
     }
-
     @Override
-    public void onCreate(final Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
@@ -52,44 +50,44 @@ public class Memory extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0); toast.setDuration(Toast.LENGTH_SHORT); toast.setView(layout);
 
         final GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
-        ImageAdapter.shuffleArray(ImageAdapter.mThumbIds);
+        gridview.setAdapter(new ImageAdapter2(this));
+        ImageAdapter2.shuffleArray(ImageAdapter2.mThumbIds);
 
         final long startTime = System.nanoTime();
 
-        gridview.setOnItemClickListener(new OnItemClickListener() {
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 current = (ImageView) v;
-                current.setImageResource(ImageAdapter.mThumbIds[position]);
+                current.setImageResource(ImageAdapter2.mThumbIds[position]);
                 if (clicks == 0) {
                     previous = current;
                     clicks++;
 
                 } else if (clicks == 2 && previous.getDrawable().getConstantState().equals(current.getDrawable().getConstantState())) {
-                        previous.startAnimation(anim); current.startAnimation(anim);
-                        previous.setVisibility(View.INVISIBLE); current.setVisibility(View.INVISIBLE);
-                        showToast(toast,"You did it!", 600,text);
-                        for(int i = 0; i < gridview.getChildCount(); i++) {
-                            if(gridview.getChildAt(i).getVisibility()==View.INVISIBLE)
-                                gone = true;
-                            else
-                                gone = false;
-                        }
+                    previous.startAnimation(anim); current.startAnimation(anim);
+                    previous.setVisibility(View.INVISIBLE); current.setVisibility(View.INVISIBLE);
+                    showToast(toast,"You did it!", 600,text);
+                    for(int i = 0; i < gridview.getChildCount(); i++) {
+                        if(gridview.getChildAt(i).getVisibility()==View.INVISIBLE)
+                            gone = true;
+                        else
+                            gone = false;
+                    }
 
-                        if(gone) {
-                            long endTime = System.nanoTime();
-                            long score = (endTime - startTime) / 10000000;
+                    if(gone) {
+                        long endTime = System.nanoTime();
+                        long score = (endTime - startTime) / 10000000;
 
-                            SharedPreferences sharedPreferences = getSharedPreferences("HighScores", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putLong("Score", score);
-                            editor.commit();
+                        SharedPreferences sharedPreferences = getSharedPreferences("HighScores", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putLong("Score", score);
+                        editor.commit();
 
-                            Long score1 = sharedPreferences.getLong("Score", score);
-                            showToast(toast, "CONGRATS! "+score1, 900, text);
-                        }
-                    }  else if (clicks == 3) {
+                        Long score1 = sharedPreferences.getLong("Score", score);
+                        showToast(toast, "CONGRATS!", 900, text);
+                    }
+                }  else if (clicks == 3) {
                     clicks = 1;
                     temp.setImageResource(R.color.tileColor2);
                     previous.setImageResource(R.color.tileColor2); }

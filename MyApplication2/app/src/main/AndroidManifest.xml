@@ -24,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Memory" />
-        <activity android:name=".Game_selection"></activity>
+        <activity android:name=".Game_selection" />
+        <activity android:name=".Cartoons"></activity>
     </application>
 
 </manifest>

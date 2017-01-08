@@ -17,7 +17,7 @@ public class facts extends AppCompatActivity {
         final TextView txt = (TextView) findViewById(R.id.textView);
 
         Calendar cal = Calendar.getInstance();
-        int day = cal.get(Calendar.DAY_OF_MONTH)%23;
+        int day = cal.get(Calendar.DAY_OF_MONTH)%18;
 
         switch(day+1)  {
             case 1:  img.setImageResource(R.drawable.day1);
@@ -44,8 +44,8 @@ public class facts extends AppCompatActivity {
             case 8:  img.setImageResource(R.drawable.day8);
                      txt.setText(R.string.day8);
                      break;
-            case 9:  img.setImageResource(R.drawable.day22);
-                     txt.setText(R.string.day22);
+            case 9:  img.setImageResource(R.drawable.day9);
+                     txt.setText(R.string.day9);
                      break;
             case 10: img.setImageResource(R.drawable.day10);
                      txt.setText(R.string.day10);
@@ -74,18 +74,6 @@ public class facts extends AppCompatActivity {
             case 18: img.setImageResource(R.drawable.day18);
                      txt.setText(R.string.day18);
                      break;
-            case 19: img.setImageResource(R.drawable.day19);
-                     txt.setText(R.string.day19);
-                     break;
-            case 20: img.setImageResource(R.drawable.day20);
-                     txt.setText(R.string.day20);
-                     break;
-            case 21: img.setImageResource(R.drawable.day21);
-                     txt.setText(R.string.day21);
-                     break;
-            case 22: img.setImageResource(R.drawable.day22);
-                    txt.setText(R.string.day22);
-                break;
         }
     }
 }
