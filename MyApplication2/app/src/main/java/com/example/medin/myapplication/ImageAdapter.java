@@ -42,7 +42,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         Point size = new Point();
         ds.getSize(size);
         int w = size.x, h = size.y;
-        System.out.println("x: "+w+" y: "+h);
+        System.out.println("x: "+w+" y: "+h); //works perfectly!
 
         imageView.setLayoutParams(new GridLayoutManager.LayoutParams(250,250));
 
