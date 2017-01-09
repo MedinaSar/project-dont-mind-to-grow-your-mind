@@ -22,6 +22,7 @@ public class Memory extends AppCompatActivity {
     private ImageView previous;
     private ImageView current;
     private ImageView temp;
+    private int previousPosition = -1;
     private static boolean gone = false;
     private void showToast(final Toast toast, String msg, int dur, TextView text){
         text.setText(msg);
@@ -66,7 +67,8 @@ public class Memory extends AppCompatActivity {
                     previous = current;
                     clicks++;
 
-                } else if (clicks == 2 && previous.getDrawable().getConstantState().equals(current.getDrawable().getConstantState())) {
+                } else if (clicks == 2 && previous.getDrawable().getConstantState().equals(current.getDrawable().getConstantState())
+                        && previousPosition != position) {
                         previous.startAnimation(anim); current.startAnimation(anim);
                         previous.setVisibility(View.INVISIBLE); current.setVisibility(View.INVISIBLE);
                         showToast(toast,"You did it!", 600,text);
@@ -97,10 +99,11 @@ public class Memory extends AppCompatActivity {
                     clicks = 1;
                     temp.setImageResource(R.color.tileColor2);
                     previous.setImageResource(R.color.tileColor2); }
-
-                clicks++;
+                if(previousPosition!=position)
+                    clicks++;
                 temp=previous;
                 previous = current;
+                previousPosition = position;
             }
         });
     }
