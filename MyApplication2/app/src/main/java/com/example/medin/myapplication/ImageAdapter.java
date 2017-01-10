@@ -41,14 +41,20 @@ public View getView(int position, View convertView, ViewGroup parent) {
         Display ds = wm.getDefaultDisplay();
         Point size = new Point();
         ds.getSize(size);
-        int w = size.x, h = size.y;
-        System.out.println("x: "+w+" y: "+h); //works perfectly!
+        int w = size.x;
+        if(w<600)
+            imageView.setLayoutParams(new GridLayoutManager.LayoutParams(120,120));
+        else if(w>=600 && w<700)
+            imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
+        else if(w>=700 && w<750)
+            imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
+        else
+            imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
 
-        imageView.setLayoutParams(new GridLayoutManager.LayoutParams(250,250));
-
-        imageView.setLayoutParams(new GridView.LayoutParams(270, 270));
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-    } else {
+    }
+
+    else {
         imageView = (ImageView) convertView;
     }
     imageView.setImageResource(R.color.tileColor);

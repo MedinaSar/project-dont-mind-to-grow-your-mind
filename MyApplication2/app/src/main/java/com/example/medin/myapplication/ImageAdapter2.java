@@ -1,13 +1,19 @@
 package com.example.medin.myapplication;
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
+import android.view.Display;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.AbsListView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-
 import java.util.Random;
+import android.graphics.Point;
 
 class ImageAdapter2 extends BaseAdapter {
     private final Context mContext;
@@ -30,6 +36,24 @@ class ImageAdapter2 extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
+
+            WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+            Display ds = wm.getDefaultDisplay();
+            Point size = new Point();
+            ds.getSize(size);
+            int w = size.x;
+
+            if(w<600)
+                imageView.setLayoutParams(new GridLayoutManager.LayoutParams(120,120));
+            else if(w>=600 && w<700)
+                imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
+            else if(w>=700 && w<750)
+                imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
+            else
+                imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
+
+            imageView.setLayoutParams(new GridLayoutManager.LayoutParams(250,250));
+
             imageView.setLayoutParams(new GridView.LayoutParams(270, 270));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         } else {

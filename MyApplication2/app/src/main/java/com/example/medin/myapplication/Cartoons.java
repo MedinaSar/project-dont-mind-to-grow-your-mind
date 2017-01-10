@@ -2,25 +2,27 @@ package com.example.medin.myapplication;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
-import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.animation.AlphaAnimation;
+import android.view.LayoutInflater;
+import android.os.Handler;
 
 public class Cartoons extends AppCompatActivity {
     private int clicks = 0;
     private ImageView previous;
     private ImageView current;
     private ImageView temp;
+    private int previousPosition = -1;
     private static boolean gone = false;
     private void showToast(final Toast toast, String msg, int dur, TextView text){
         text.setText(msg);
@@ -34,8 +36,9 @@ public class Cartoons extends AppCompatActivity {
         }, dur);
         return;
     }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
@@ -55,7 +58,7 @@ public class Cartoons extends AppCompatActivity {
 
         final long startTime = System.nanoTime();
 
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 current = (ImageView) v;
@@ -64,7 +67,8 @@ public class Cartoons extends AppCompatActivity {
                     previous = current;
                     clicks++;
 
-                } else if (clicks == 2 && previous.getDrawable().getConstantState().equals(current.getDrawable().getConstantState())) {
+                } else if (clicks == 2 && previous.getDrawable().getConstantState().equals(current.getDrawable().getConstantState())
+                        && previousPosition != position) {
                     previous.startAnimation(anim); current.startAnimation(anim);
                     previous.setVisibility(View.INVISIBLE); current.setVisibility(View.INVISIBLE);
                     showToast(toast,"You did it!", 600,text);
@@ -95,10 +99,11 @@ public class Cartoons extends AppCompatActivity {
                     clicks = 1;
                     temp.setImageResource(R.color.tileColor2);
                     previous.setImageResource(R.color.tileColor2); }
-
-                clicks++;
+                if(previousPosition!=position)
+                    clicks++;
                 temp=previous;
                 previous = current;
+                previousPosition = position;
             }
         });
     }

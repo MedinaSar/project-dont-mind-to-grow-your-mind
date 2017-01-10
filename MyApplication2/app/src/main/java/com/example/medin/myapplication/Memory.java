@@ -72,6 +72,7 @@ public class Memory extends AppCompatActivity {
                         previous.startAnimation(anim); current.startAnimation(anim);
                         previous.setVisibility(View.INVISIBLE); current.setVisibility(View.INVISIBLE);
                         showToast(toast,"You did it!", 600,text);
+
                         for(int i = 0; i < gridview.getChildCount(); i++) {
                             if(gridview.getChildAt(i).getVisibility()==View.INVISIBLE)
                                 gone = true;
@@ -83,6 +84,7 @@ public class Memory extends AppCompatActivity {
                             long endTime = System.nanoTime();
                             long score = (endTime - startTime) / 10000000;
 
+                            //Don't need shared preferences
                             SharedPreferences sharedPreferences = getSharedPreferences("HighScores", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putLong("Score", score);
