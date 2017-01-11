@@ -42,15 +42,21 @@ public View getView(int position, View convertView, ViewGroup parent) {
         Point size = new Point();
         ds.getSize(size);
         int w = size.x;
-        if(w<600)
+
+        if(w<400)
+            imageView.setLayoutParams(new GridLayoutManager.LayoutParams(80,80));
+        else if(w>=400 && w<500)
+            imageView.setLayoutParams(new GridLayoutManager.LayoutParams(110,110));
+        else if(w<=500 && w<600)
             imageView.setLayoutParams(new GridLayoutManager.LayoutParams(120,120));
         else if(w>=600 && w<700)
             imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
         else if(w>=700 && w<750)
-            imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
+            imageView.setLayoutParams(new GridView.LayoutParams(170, 170));
+        else if(w>=750 && w<850)
+            imageView.setLayoutParams(new GridView.LayoutParams(190, 190));
         else
             imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
-
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 

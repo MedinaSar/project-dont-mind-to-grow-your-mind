@@ -4,28 +4,27 @@
 
     <application
         android:allowBackup="true"
-        android:configChanges="orientation|screenSize"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/minions"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".facts">
+        <activity android:name=".facts" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Memory" />
-        <activity android:name=".Game_selection" />
-        <activity android:name=".Cartoons"></activity>
+        <activity android:name=".Memory" android:screenOrientation="portrait"/>
+        <activity android:name=".Game_selection" android:screenOrientation="portrait"/>
+        <activity android:name=".Cartoons" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

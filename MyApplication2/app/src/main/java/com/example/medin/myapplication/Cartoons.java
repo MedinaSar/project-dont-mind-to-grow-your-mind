@@ -53,6 +53,7 @@ public class Cartoons extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0); toast.setDuration(Toast.LENGTH_SHORT); toast.setView(layout);
 
         final GridView gridview = (GridView) findViewById(R.id.gridview);
+
         gridview.setAdapter(new ImageAdapter2(this));
         ImageAdapter2.shuffleArray(ImageAdapter2.mThumbIds);
 
