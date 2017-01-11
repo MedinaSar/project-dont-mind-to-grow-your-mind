@@ -77,7 +77,7 @@ public class Cartoons extends AppCompatActivity {
                         if(gridview.getChildAt(i).getVisibility()==View.INVISIBLE)
                             gone = true;
                         else
-                            gone = false;
+                        {gone = false; break;}
                     }
 
                     if(gone) {
