@@ -1,4 +1,4 @@
-package com.example.medin.myapplication;
+package com.example.medin.growyourmind;
 
 import org.junit.Test;
 

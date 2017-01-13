@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.medin.myapplication">
+    package="com.example.medin.growyourmind">
 
     <application
         android:allowBackup="true"
@@ -8,23 +8,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+        <activity android:name="com.example.medin.growyourmind.MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".facts" android:screenOrientation="portrait">
+        <activity android:name="com.example.medin.growyourmind.facts" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Memory" android:screenOrientation="portrait"/>
-        <activity android:name=".Game_selection" android:screenOrientation="portrait"/>
-        <activity android:name=".Cartoons" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.example.medin.growyourmind.Memory" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.medin.growyourmind.Game_selection" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.medin.growyourmind.Cartoons" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

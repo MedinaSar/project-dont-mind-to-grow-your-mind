@@ -1,6 +1,5 @@
-package com.example.medin.myapplication;
+package com.example.medin.growyourmind;
 
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;

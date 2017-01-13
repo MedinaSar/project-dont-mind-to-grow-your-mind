@@ -1,4 +1,4 @@
-package com.example.medin.myapplication;
+package com.example.medin.growyourmind;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

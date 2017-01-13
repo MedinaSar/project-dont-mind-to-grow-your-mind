@@ -1,4 +1,4 @@
-package com.example.medin.myapplication;
+package com.example.medin.growyourmind;
 
 import java.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
