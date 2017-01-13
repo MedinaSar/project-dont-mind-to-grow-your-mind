@@ -82,21 +82,15 @@ public class Cartoons extends AppCompatActivity {
 
                     if(gone) {
                         long endTime = System.nanoTime();
-                        long score = (endTime - startTime) / 10000000;
-
-                        SharedPreferences sharedPreferences = getSharedPreferences("HighScores", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putLong("Score", score);
-                        editor.commit();
-
-                        Long score1 = sharedPreferences.getLong("Score", score);
-                        //showToast(toast, "CONGRATS! "+score1, 900, text);
+                        long score = 10000-(endTime - startTime) / 10000000;
                         TextView t = (TextView) findViewById(R.id.textView2);
-                        t.setText("CONGRATS! You're score is: "+score1);
+                        if(score>0)
+                            t.setText("CONGRATS! You're score is: "+score);
+                        else
+                            t.setText("GAME OVER. Next time, you'll do better!");
                         t.setBackgroundColor(R.color.tileColor2);
                         t.setTextSize(50);
-                    }
-                }  else if (clicks == 3) {
+                    }                }  else if (clicks == 3) {
                     clicks = 1;
                     temp.setImageResource(R.color.tileColor2);
                     previous.setImageResource(R.color.tileColor2); }
