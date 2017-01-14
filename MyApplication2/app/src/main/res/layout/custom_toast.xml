@@ -6,7 +6,7 @@
     android:padding="8dp"
     android:background="#DAAA"
     >
-    <ImageView android:src="@drawable/minions"
+    <ImageView android:src="@drawable/cat"
         android:layout_width="64dp"
         android:layout_height="85dp"
         android:layout_marginRight="8dp"

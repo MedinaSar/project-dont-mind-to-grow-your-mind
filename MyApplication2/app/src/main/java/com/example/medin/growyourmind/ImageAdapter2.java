@@ -80,15 +80,15 @@ class ImageAdapter2 extends BaseAdapter {
     }
     // references to images
     public static final Integer[] mThumbIds = {
-            R.drawable.donald, R.drawable.dora,
-            R.drawable.garfield, R.drawable.masha,
-            R.drawable.mickey, R.drawable.minions,
-            R.drawable.pikachu, R.drawable.smurfs,
-            R.drawable.spongebob, R.drawable.tom_jerry,
-            R.drawable.donald, R.drawable.dora,
-            R.drawable.garfield, R.drawable.masha,
-            R.drawable.mickey, R.drawable.minions,
-            R.drawable.pikachu, R.drawable.smurfs,
-            R.drawable.spongebob, R.drawable.tom_jerry,
+            R.drawable.bearc, R.drawable.blonde,
+            R.drawable.bearc, R.drawable.blonde,
+            R.drawable.smurfs, R.drawable.pony,
+            R.drawable.tomas, R.drawable.zoids,
+            R.drawable. mickey, R.drawable.code_monkey,
+            R.drawable.smurfs, R.drawable.pony,
+            R.drawable.tomas, R.drawable.zoids,
+            R.drawable. mickey, R.drawable.code_monkey,
+            R.drawable.digimon, R.drawable.frozen,
+            R.drawable.digimon, R.drawable.frozen,
     };
 }
